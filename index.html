@@ -104,7 +104,30 @@ body{
         </p>
 
         <a class="btn" href="app-armeabi-v7a-release.apk" download>
-            ⬇️ تحميل التطبيق
+    ⬇️ تحميل التطبيق
+            <a class="share-btn"
+   href="https://wa.me/?text=حمّل%20تطبيق%20إسلام%20نت%20بلس%20من%20هنا:%20https://eslamnetplus.github.io/"
+   target="_blank">
+   📲 مشاركة عبر واتساب
+    </a>
+    
+           /* حركة الشعار */
+@keyframes logoFadeIn {
+    0% { opacity: 0; transform: translateY(-10px) scale(0.9); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes logoPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.header img{
+    width:90px;          /* حجم الشعار */
+    margin-bottom:15px;
+    animation: logoFadeIn 0.8s ease-out, logoPulse 3s ease-in-out infinite;
+}
+    
         </a>
     </div>
 
