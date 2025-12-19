@@ -8,46 +8,52 @@
 <style>
 body{
     margin:0;
-    font-family: "Segoe UI", Tahoma, Arial;
-    background: linear-gradient(135deg,#1f3c88,#2563eb,#38bdf8);
+    font-family:Tahoma, Arial;
+    background:linear-gradient(135deg,#1f3c88,#2563eb,#38bdf8);
     min-height:100vh;
     display:flex;
     align-items:center;
     justify-content:center;
 }
 
+/* الحاوية */
 .container{
     width:100%;
     max-width:420px;
-    background:#ffffff;
+    background:#fff;
     border-radius:22px;
     overflow:hidden;
     box-shadow:0 25px 50px rgba(0,0,0,.3);
 }
 
+/* الهيدر */
 .header{
+    background:linear-gradient(135deg,#1f3c88,#2563eb);
     padding:30px 20px 20px;
     text-align:center;
-    background:linear-gradient(135deg,#1f3c88,#2563eb);
     color:#fff;
+}
+
+/* حركة الشعار */
+@keyframes logoFadeIn {
+    from {opacity:0; transform:translateY(-10px) scale(.9);}
+    to {opacity:1; transform:translateY(0) scale(1);}
+}
+@keyframes logoPulse {
+    0%,100%{transform:scale(1);}
+    50%{transform:scale(1.05);}
 }
 
 .header img{
     width:90px;
     margin-bottom:15px;
+    animation:logoFadeIn .8s ease-out, logoPulse 3s ease-in-out infinite;
 }
 
-.header h1{
-    margin:0;
-    font-size:26px;
-}
+.header h1{margin:0;font-size:26px;}
+.header p{margin:8px 0 0;font-size:15px;}
 
-.header p{
-    margin:8px 0 0;
-    font-size:15px;
-    opacity:.95;
-}
-
+/* المحتوى */
 .content{
     padding:25px;
     text-align:center;
@@ -59,22 +65,47 @@ body{
     line-height:1.8;
 }
 
+/* زر التحميل */
 .btn{
     display:block;
-    margin:25px auto 0;
+    margin:25px auto 10px;
     padding:16px;
     background:linear-gradient(135deg,#2563eb,#38bdf8);
     color:#fff;
     text-decoration:none;
     font-size:18px;
     border-radius:35px;
-    transition:.3s;
 }
 
-.btn:hover{
-    opacity:.9;
+/* زر واتساب */
+.share-btn{
+    display:block;
+    margin:10px auto 0;
+    padding:14px;
+    background:#25D366;
+    color:#fff;
+    text-decoration:none;
+    font-size:17px;
+    border-radius:35px;
 }
 
+/* قسم الصور */
+.gallery h3{
+    margin:25px 0 15px;
+    color:#1f3c88;
+}
+.gallery-images{
+    display:flex;
+    gap:12px;
+    overflow-x:auto;
+}
+.gallery-images img{
+    width:120px;
+    border-radius:15px;
+    box-shadow:0 10px 20px rgba(0,0,0,.2);
+}
+
+/* الفوتر */
 .footer{
     padding:15px;
     text-align:center;
@@ -90,45 +121,35 @@ body{
 <div class="container">
 
     <div class="header">
-        <!-- الشعار -->
         <img src="logo.png" alt="إسلام نت بلس">
         <h1>إسلام نت بلس</h1>
-        <p>منصة رقمية  متكاملة</p>
+        <p>منصة رقمية متكاملة</p>
     </div>
 
     <div class="content">
         <p>
             حمّل تطبيق <strong>إسلام نت بلس</strong><br>
-            واستمتع بخدمات  اسلام نت
-            بتصميم سهل وسريع.
+            واستمتع بخدماتنا الإلكترونية  .
         </p>
 
         <a class="btn" href="app-armeabi-v7a-release.apk" download>
-    ⬇️ تحميل التطبيق
-            <a class="share-btn"
-   href="https://wa.me/?text=حمّل%20تطبيق%20إسلام%20نت%20بلس%20من%20هنا:%20https://eslamnetplus.github.io/"
-   target="_blank">
-   📲 مشاركة عبر واتساب
-    </a>
-    
-           /* حركة الشعار */
-@keyframes logoFadeIn {
-    0% { opacity: 0; transform: translateY(-10px) scale(0.9); }
-    100% { opacity: 1; transform: translateY(0) scale(1); }
-}
-
-@keyframes logoPulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-}
-
-.header img{
-    width:90px;          /* حجم الشعار */
-    margin-bottom:15px;
-    animation: logoFadeIn 0.8s ease-out, logoPulse 3s ease-in-out infinite;
-}
-    
+            ⬇️ تحميل التطبيق
         </a>
+
+        <a class="share-btn"
+           href="https://wa.me/777438844?text=حمّل%20تطبيق%20إسلام%20نت%20بلس%20من%20هنا:%20https://eslamnetplus.github.io/"
+           target="_blank">
+           📲 مشاركة عبر واتساب
+        </a>
+
+        <div class="gallery">
+            <h3>صور من التطبيق</h3>
+            <div class="gallery-images">
+                <img src="s1.jpg">
+                <img src="s2.jpg">
+                <img src="s3.jpg">
+            </div>
+        </div>
     </div>
 
     <div class="footer">
@@ -138,4 +159,5 @@ body{
 </div>
 
 </body>
-</html>
+            </html>
+            
