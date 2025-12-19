@@ -89,6 +89,24 @@ body{
     border-radius:35px;
 }
 
+/* روابط اجتماعية */
+.social-links{
+    margin-top:15px;
+    display:flex;
+    gap:10px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+.social-links a{
+    padding:12px 18px;
+    border-radius:30px;
+    color:#fff;
+    text-decoration:none;
+    font-size:15px;
+}
+.fb-btn{background:#1877f2;}
+.web-btn{background:#0ea5e9;}
+
 /* قسم الصور */
 .gallery h3{
     margin:25px 0 15px;
@@ -103,6 +121,19 @@ body{
     width:120px;
     border-radius:15px;
     box-shadow:0 10px 20px rgba(0,0,0,.2);
+}
+
+/* سياسة الخصوصية */
+.privacy-link{
+    margin-top:15px;
+}
+.privacy-link a{
+    font-size:14px;
+    color:#1f3c88;
+    text-decoration:none;
+}
+.privacy-link a:hover{
+    text-decoration:underline;
 }
 
 /* الفوتر */
@@ -123,13 +154,13 @@ body{
     <div class="header">
         <img src="logo.png" alt="إسلام نت بلس">
         <h1>إسلام نت بلس</h1>
-        <p>منصة رقمية متكاملة</p>
+        <p>منصة رقمية إسلامية متكاملة</p>
     </div>
 
     <div class="content">
         <p>
             حمّل تطبيق <strong>إسلام نت بلس</strong><br>
-            واستمتع بخدماتنا الإلكترونية  .
+            واستمتع بخدمات إسلامية بتصميم عصري وسريع.
         </p>
 
         <a class="btn" href="app-armeabi-v7a-release.apk" download>
@@ -139,8 +170,22 @@ body{
         <a class="share-btn"
            href="https://wa.me/777438844?text=حمّل%20تطبيق%20إسلام%20نت%20بلس%20من%20هنا:%20https://eslamnetplus.github.io/"
            target="_blank">
-           📲 مشاركة عبر واتساب
+           📲 تواصل عبر واتساب
         </a>
+
+        <div class="social-links">
+            <a class="fb-btn"
+               href="https://www.facebook.com/share/1BY3gEy3Gc/"
+               target="_blank">
+               📘 فيسبوك
+            </a>
+
+            <a class="web-btn"
+               href="https://eslam.yrbso.net/"
+               target="_blank">
+               🌐 الموقع
+            </a>
+        </div>
 
         <div class="gallery">
             <h3>صور من التطبيق</h3>
@@ -149,6 +194,12 @@ body{
                 <img src="s2.jpg">
                 <img src="s3.jpg">
             </div>
+        </div>
+
+        <div class="privacy-link">
+            <a href="https://eslam.yrbso.net/terms?eslam" target="_blank">
+                🔐 سياسة الخصوصية
+            </a>
         </div>
     </div>
 
@@ -159,5 +210,5 @@ body{
 </div>
 
 </body>
-            </html>
-            
+    </html>
+    
