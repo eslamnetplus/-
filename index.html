@@ -1,150 +1,131 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>إسلام نت بلس</title>
+    <meta charset="UTF-8">
+    <title>إسلام نت بلس</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-body{
-    margin:0;
-    font-family:Tahoma, Arial;
-    background:linear-gradient(135deg,#1f3c88,#2563eb,#38bdf8);
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
+    <style>
+        body{
+            margin:0;
+            font-family: "Segoe UI", Tahoma, sans-serif;
+            background: linear-gradient(135deg,#1f3c88,#2c7be5);
+            color:#333;
+        }
 
-/* الحاوية */
-.container{
-    width:100%;
-    max-width:420px;
-    background:#fff;
-    border-radius:22px;
-    overflow:hidden;
-    box-shadow:0 25px 50px rgba(0,0,0,.3);
-}
+        .container{
+            max-width:420px;
+            margin:40px auto;
+            background:#fff;
+            border-radius:20px;
+            overflow:hidden;
+            box-shadow:0 20px 40px rgba(0,0,0,.25);
+        }
 
-/* الهيدر */
-.header{
-    background:linear-gradient(135deg,#1f3c88,#2563eb);
-    padding:30px 20px 20px;
-    text-align:center;
-    color:#fff;
-}
+        .header{
+            padding:30px;
+            text-align:center;
+            background: linear-gradient(135deg,#1f3c88,#2c7be5);
+            color:#fff;
+        }
 
-/* حركة الشعار */
-@keyframes logoFadeIn {
-    from {opacity:0; transform:translateY(-10px) scale(.9);}
-    to {opacity:1; transform:translateY(0) scale(1);}
-}
-@keyframes logoPulse {
-    0%,100%{transform:scale(1);}
-    50%{transform:scale(1.05);}
-}
+        .header img{
+            width:90px;
+            margin-bottom:15px;
+            animation: logoFadeIn .8s ease-out, logoPulse 3s ease-in-out infinite;
+        }
 
-.header img{
-    width:90px;
-    margin-bottom:15px;
-    animation:logoFadeIn .8s ease-out, logoPulse 3s ease-in-out infinite;
-}
+        @keyframes logoFadeIn {
+            from {opacity:0; transform:translateY(-10px) scale(.9);}
+            to {opacity:1; transform:none;}
+        }
 
-.header h1{margin:0;font-size:26px;}
-.header p{margin:8px 0 0;font-size:15px;}
+        @keyframes logoPulse {
+            0%,100% {transform:scale(1);}
+            50% {transform:scale(1.05);}
+        }
 
-/* المحتوى */
-.content{
-    padding:25px;
-    text-align:center;
-    color:#333;
-}
+        .header h1{
+            margin:10px 0 5px;
+            font-size:26px;
+        }
 
-.content p{
-    font-size:16px;
-    line-height:1.8;
-}
+        .header p{
+            margin:0;
+            font-size:15px;
+            opacity:.9;
+        }
 
-/* زر التحميل */
-.btn{
-    display:block;
-    margin:25px auto 10px;
-    padding:16px;
-    background:linear-gradient(135deg,#2563eb,#38bdf8);
-    color:#fff;
-    text-decoration:none;
-    font-size:18px;
-    border-radius:35px;
-}
+        .content{
+            padding:25px;
+            text-align:center;
+            font-size:15px;
+            line-height:1.8;
+        }
 
-/* زر واتساب */
-.share-btn{
-    display:block;
-    margin:10px auto 0;
-    padding:14px;
-    background:#25D366;
-    color:#fff;
-    text-decoration:none;
-    font-size:17px;
-    border-radius:35px;
-}
+        .btn{
+            display:block;
+            background: linear-gradient(135deg,#1f3c88,#2c7be5);
+            color:#fff;
+            padding:14px;
+            margin:20px 0 10px;
+            border-radius:30px;
+            text-decoration:none;
+            font-size:16px;
+            font-weight:bold;
+        }
 
-/* روابط اجتماعية */
-.social-links{
-    margin-top:15px;
-    display:flex;
-    gap:10px;
-    justify-content:center;
-    flex-wrap:wrap;
-}
-.social-links a{
-    padding:12px 18px;
-    border-radius:30px;
-    color:#fff;
-    text-decoration:none;
-    font-size:15px;
-}
-.fb-btn{background:#1877f2;}
-.web-btn{background:#0ea5e9;}
+        .share-btn{
+            display:block;
+            background:#25D366;
+            color:#fff;
+            padding:12px;
+            margin:10px 0;
+            border-radius:30px;
+            text-decoration:none;
+            font-size:15px;
+        }
 
-/* قسم الصور */
-.gallery h3{
-    margin:25px 0 15px;
-    color:#1f3c88;
-}
-.gallery-images{
-    display:flex;
-    gap:12px;
-    overflow-x:auto;
-}
-.gallery-images img{
-    width:120px;
-    border-radius:15px;
-    box-shadow:0 10px 20px rgba(0,0,0,.2);
-}
+        .social-links{
+            display:flex;
+            justify-content:center;
+            gap:10px;
+            margin-top:15px;
+        }
 
-/* سياسة الخصوصية */
-.privacy-link{
-    margin-top:15px;
-}
-.privacy-link a{
-    font-size:14px;
-    color:#1f3c88;
-    text-decoration:none;
-}
-.privacy-link a:hover{
-    text-decoration:underline;
-}
+        .social-links a{
+            text-decoration:none;
+            padding:10px 14px;
+            border-radius:20px;
+            font-size:14px;
+            color:#fff;
+        }
 
-/* الفوتر */
-.footer{
-    padding:15px;
-    text-align:center;
-    font-size:13px;
-    color:#777;
-    background:#f5f7fb;
-}
-</style>
+        .fb-btn{ background:#1877f2; }
+        .web-btn{ background:#444; }
+
+        .privacy{
+            margin-top:15px;
+        }
+
+        .privacy a{
+            font-size:13px;
+            color:#1f3c88;
+            text-decoration:none;
+        }
+
+        .privacy a:hover{
+            text-decoration:underline;
+        }
+
+        .footer{
+            padding:15px;
+            font-size:13px;
+            text-align:center;
+            color:#777;
+            background:#f5f5f5;
+        }
+    </style>
 </head>
 
 <body>
@@ -159,44 +140,39 @@ body{
 
     <div class="content">
         <p>
-            حمّل تطبيق <strong>إسلام نت بلس</strong><br>
-            واستمتع بخدمات اسلام نت بلس بتصميم عصري وسريع.
+            حمّل تطبيق <strong>إسلام نت بلس</strong>  
+            واستمتع بخدمات إسلام نت بتصميم عصري وسريع.
         </p>
 
-        <a class="btn" href="app-armeabi-v7a-release(1).apk" download>
+        <!-- زر التحميل -->
+        <a class="btn" href="app-v2.apk" download>
             ⬇️ تحميل التطبيق
         </a>
 
+        <!-- واتساب -->
         <a class="share-btn"
-           href="https://wa.me/777438844?text=حمّل%20تطبيق%20إسلام%20نت%20بلس%20من%20هنا:%20https://eslamnetplus.github.io/"
+           href="https://wa.me/777438844"
            target="_blank">
-           📲 تواصل عبر واتساب
+            📱 تواصل عبر واتساب
         </a>
 
+        <!-- روابط -->
         <div class="social-links">
             <a class="fb-btn"
                href="https://www.facebook.com/share/1BY3gEy3Gc/"
                target="_blank">
-               📘 فيسبوك
+               فيسبوك
             </a>
 
             <a class="web-btn"
                href="https://eslam.yrbso.net/"
                target="_blank">
-               🌐 الموقع
+               الموقع
             </a>
         </div>
 
-        <div class="gallery">
-            <h3>صور من التطبيق</h3>
-            <div class="gallery-images">
-                <img src="s1.jpg">
-                <img src="s2.jpg">
-                <img src="s3.jpg">
-            </div>
-        </div>
-
-        <div class="privacy-link">
+        <!-- الخصوصية -->
+        <div class="privacy">
             <a href="https://eslam.yrbso.net/terms?eslam" target="_blank">
                 🔐 سياسة الخصوصية
             </a>
